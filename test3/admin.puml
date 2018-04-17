@@ -1,0 +1,6 @@
+@startuml
+object 图书管理员{
+    管理员ID=0001
+    姓名=孙守利
+}
+@enduml
