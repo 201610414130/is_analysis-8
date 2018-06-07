@@ -1,0 +1,10 @@
+@startuml
+title 基于GitHub的实验管理平台--《查看用户信息》用例的顺序图
+actor user
+users -> users: 验证登录信息
+user -> users:用户查询信息
+users --> user:返回用户真实姓名
+users --> user:返回用户GitHub账号信息
+users --> user:返回用户信息上一次修改时间
+users --> user:返回用户禁用状态
+@enduml

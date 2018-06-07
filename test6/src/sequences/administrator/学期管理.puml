@@ -1,0 +1,11 @@
+@startuml
+title 基于GitHub的实验管理平台--《学期管理》用例的顺序图
+actor administrate
+administrator-->administrate : 验证管理员账户信息
+administrate -> semesters:新增学期
+administrate -> semesters:删除学期
+administrate -> semesters:修改学期名称和起止时间
+administrate -> semesters:修改当前学期
+administrate -> semesters:开启和关闭选课
+semesters --> administrate:返回成功信息
+@enduml

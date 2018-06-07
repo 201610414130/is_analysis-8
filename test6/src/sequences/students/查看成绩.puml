@@ -1,0 +1,13 @@
+@startuml
+title 基于GitHub的实验管理平台--《查看成绩》用例的顺序图
+actor student
+student --> student_course: 学号信息
+alt
+student_course --> classes:学生所属班级
+classes -> tests:获取班级实验ID
+tests --> score:实验ID
+student_course --> score:上课ID
+end
+score -> student:实验分数信息、详细信息、评语、评定日期
+
+@enduml

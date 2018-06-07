@@ -1,0 +1,10 @@
+@startuml
+title 基于GitHub的实验管理平台--《实验管理》用例的顺序图
+actor teacher
+teachers --> teachers: 验证teacher账户信息
+teachers -> classes:获取老师已选课程的班级号
+teacher -> tests:发布实验
+teacher -> tests:修改实验
+teacher -> tests:删除实验
+tests --> teacher:返回成功信息
+@enduml

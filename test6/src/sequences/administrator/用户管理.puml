@@ -1,0 +1,12 @@
+@startuml
+title 基于GitHub的实验管理平台--《用户管理》用例的顺序图
+actor administrate
+administrator-->administrate : 验证管理员账户信息
+administrate -> users:用户账户管理、批量管理
+users --> administrate:返回成功信息
+administrate -> students:学生账户管理、批量管理
+students -->administrate:返回成功信息
+administrate -> teachers:老师账户管理、批量管理
+teachers --> administrate:返回成功信息
+
+@enduml

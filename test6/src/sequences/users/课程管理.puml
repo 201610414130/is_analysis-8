@@ -1,0 +1,40 @@
+@startuml
+title 基于GitHub的实验管理平台--《课程管理》用例的顺序图
+actor administrate
+actor teacher
+actor student
+group 管理员课程管理
+administrator -> administrator:验证管理员账户
+lessons --> administrate:所有课程列表
+administrate -> lessons : 对所有课程进行增删改
+administrate -> lessons : 禁用、启用课程选择
+end
+alt 如果在选课期间
+group 老师课程管理
+teacher -> lessons:获取可选课程列表
+lessons --> teacher:返回课程列表
+teacher -> lessons:选课、退选
+end
+group 学生课程管理
+student -> lessons:获取可选课程列表
+lessons --> student:返回课程列表
+student -> lessons:选课、退选
+end
+else 不在选课期间
+group 老师课程管理
+teacher -> classes:获取自己所上课程ID列表
+classes -> lessons:获取课程名称列表
+lessons --> teacher:返回课程列表
+teacher -> classes:查看自己课程的学生列表
+teacher -> classes:对课程的实验管理
+end
+group 学生课程管理
+student -> student_course:获取班级ID列表
+student_course -> classes:获取自己所上课程ID列表
+classes -> lessons:获取课程名称列表
+lessons --> student:返回课程列表
+classes -> tests:获取课程实验
+tests --> student:返回课程的实验列表
+end
+end
+@enduml

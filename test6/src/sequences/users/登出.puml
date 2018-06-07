@@ -1,0 +1,8 @@
+@startuml
+title 基于GitHub的实验管理平台--《登出》用例的顺序图
+actor user
+user ->users:用户登出
+users -> users: 验证登录信息
+users -> user:登出成功
+users --> user:返回登陆页面
+@enduml

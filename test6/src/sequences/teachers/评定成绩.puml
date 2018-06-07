@@ -1,0 +1,19 @@
+@startuml
+title 基于GitHub的实验管理平台--《评定成绩》用例的顺序图
+actor teacher
+==查询==
+teacher -> classes : 获取班级号
+classes -> tests :获取实验项目
+classes -> student_course:获取学生上课ID
+teacher -> teachers:获取老师工号
+teachers -> score_item :获取老师评分项
+==评分==
+student_course --> score:学生上课ID信息
+tests --> score:实验ID信息
+group 各评分项分数组合插入到score_detail中
+score_item --> score:评分项信息
+end
+teacher -> score :获取学生分数信息
+teacher -> score :分数评定，记录评定日期
+score --> teacher:返回成功信息
+@enduml

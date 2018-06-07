@@ -1,0 +1,12 @@
+@startuml
+title 基于GitHub的实验管理平台--《查看实验》用例的顺序图
+actor student
+==查看自己的实验==
+student -> student_course: 获取学生上课信息
+student_course --> tests:班级号信息
+tests --> student:对应班级的每个实验的信息
+==查看平台所有实验（学生可以查看所有实验，以便交流和学习）==
+student -> classes:选择平台的所有班级的列表项
+classes -> tests:获取实验ID
+tests --> student:对应班级的每个实验的信息
+@enduml

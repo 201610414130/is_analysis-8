@@ -1,0 +1,9 @@
+@startuml
+title 基于GitHub的实验管理平台--《评分项管理》用例的顺序图
+actor teacher
+teachers -> teachers: 验证教师账号
+teachers -> score_item :获取评分项
+score_item --> teacher:评分项信息
+teacher -> score_item :增加、删除、修改评分项
+score_item --> teacher:返回成功信息
+@enduml
